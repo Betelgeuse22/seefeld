@@ -1,0 +1,7 @@
+{
+  "name": "Seefeld – Neue Tiroler Küche",
+  "description": "Premium-Website für das Restaurant Seefeld in Frankfurt am Main mit Tischreservierung und digitaler Speisekarte.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

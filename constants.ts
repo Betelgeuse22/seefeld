@@ -15,7 +15,8 @@ export const CONTACT_INFO = {
 
 export const OPENING_HOURS = [
   { days: 'Mo – Do', hours: '17:00 – 23:00' },
-  { days: 'Fr & Sa', hours: '17:00 – 24:00' },
+  { days: 'Fr', hours: '17:00 – 24:00' },
+  { days: 'Sa', hours: '12:00 – 24:00' },
   { days: 'So', hours: '12:00 – 23:00' },
 ];
 
@@ -62,3 +63,15 @@ export const GALLERY_IMAGES = [
   'https://picsum.photos/800/800?random=14',
   'https://picsum.photos/800/800?random=15',
 ];
+
+export const ABOUT_FEATURES = [
+  "Authentische tiroler Küche",
+  "Frische Zubereitung",
+  "Wohlfühlatmosphäre",
+  "Ein herzliches & kompetentes Team"
+];
+
+export const OWNER_QUOTE = {
+  text: "„Seit Mitte der Siebzigerjahre, als ich als kleiner Bub in Seefeld in Tirol das erste Mal auf Skiern gestanden bin und meinen ersten Kaiserschmarrn probieren durfte, fasziniert mich die Einfachheit und Originalität der Tiroler Küche.“",
+  author: "Stephan Barth, Inhaber"
+};

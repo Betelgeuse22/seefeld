@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="hero-text"
         >
-          Tradition trifft Moderne. Erleben Sie authentische österreichische Gastfreundschaft im Herzen von Frankfurt.
+          Traditionelle Tiroler Spezialitäten, saisonale Küche und echte Gastfreundschaft — im urigen Gastraum oder im grünen Biergarten.
         </motion.p>
 
         <motion.div

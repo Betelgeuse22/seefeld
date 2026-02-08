@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Check, Quote } from 'lucide-react'; // Импортируем галочку
+import { ABOUT_FEATURES, OWNER_QUOTE } from '../constants'; // Импортируем наши данные
 
 const About: React.FC = () => {
   return (
@@ -15,7 +17,7 @@ const About: React.FC = () => {
           >
             <div className="about-image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1000&auto=format&fit=crop" 
+                src="../img/about/about_img.webp" 
                 alt="Restaurant Interior" 
                 className="about-img"
               />
@@ -40,20 +42,47 @@ const About: React.FC = () => {
             </h2>
             <div className="about-text-content">
               <p>
-                Das Seefeld steht für <strong>Tiroler Küche mit Pfiff</strong> – eine neue, leichte Interpretation der traditionellen Tiroler Küche. Wir verbinden alpenländische Klassiker mit modernen Einflüssen.
+                Seit 2018 steht das Seefeld in Frankfurt für echte Tiroler Küche mit frischem Blick auf Tradition. Ob im urig-gemütlichen Innenraum oder im lauschigen Biergarten – bei uns trifft alpine Kochkunst auf moderne Leichtigkeit.
               </p>
               <p>
-                Genießen Sie saisonale Gerichte, klassische Speisen sowie eine erlesene Auswahl an Bier & Wein in unserem gemütlichen Innenraum oder im schönen Biergarten mit Sonnenterrasse.
+                Authentizität und Frische sind für uns keine Schlagworte, sondern täglicher Anspruch. Wir stehen im direkten Austausch mit Küchenprofis und ausgewählten Produzenten aus Tirol, um Qualität und Originalgeschmack auf den Teller zu bringen.
               </p>
               <p>
-                Bei uns erwartet Sie eine authentische Atmosphäre, in der Gastfreundschaft großgeschrieben wird. Ein Stück Urlaub mitten in Frankfurt.
+                Freue Dich auf saisonale Spezialitäten, wechselnde Wochenkarten und unsere beliebten Klassiker. Auch Bierliebhaber und Weinfreunde entdecken bei uns regelmäßig neue Highlights.
               </p>
-            </div>
-            <div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Signature_sample.svg/1200px-Signature_sample.svg.png" alt="Signature" className="signature-img" />
             </div>
           </motion.div>
         </div>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="about-owner-quote"
+        >
+          <Quote className="quote-icon" size={40} />
+          <p className="quote-text">{OWNER_QUOTE.text}</p>
+          <cite className="quote-author">— {OWNER_QUOTE.author}</cite>
+        </motion.div>
+
+        {/* Новая лента преимуществ под основным блоком */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="about-features-ribbon"
+        >
+          <div className="features-grid">
+            {ABOUT_FEATURES.map((feature, index) => (
+              <div key={index} className="feature-item">
+                <div className="feature-icon-circle">
+                  <Check size={24} strokeWidth={3} />
+                </div>
+                <span className="feature-text">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

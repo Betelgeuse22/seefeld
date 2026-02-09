@@ -26,7 +26,7 @@ export const PREVIEW_MENU_ITEMS = [
     name: 'Hirschroulade',
     description: 'Schwarzwurzel, Kartoffelkrapfen, Bratenjus',
     price: '28,50 €',
-    image: './img/menu/hirsch_roulade.webp',
+    image: '/img/menu/hirsch_roulade.webp',
     category: 'Hauptgang'
   },
   {
@@ -34,7 +34,7 @@ export const PREVIEW_MENU_ITEMS = [
     name: 'Rehrücken',
     description: 'Kartoffelkrapfen, Grüne Pfeffersauce, Gemüse',
     price: '29,50 €',
-    image: './img/menu/rehe_rucken.webp',
+    image: '/img/menu/rehe_rucken.webp',
     category: 'Hauptgang'
   },
   {
@@ -42,7 +42,7 @@ export const PREVIEW_MENU_ITEMS = [
     name: 'Wiener Schnitzel',
     description: 'Vom Kalb, lauwarmem Kartoffel-Gurkensalat, Preiselbeeren',
     price: '26,90 €',
-    image: './img/menu/wiener_schnitzel.webp',
+    image: '/img/menu/wiener_schnitzel.webp',
     category: 'Hauptgang'
   },
   {
@@ -50,27 +50,27 @@ export const PREVIEW_MENU_ITEMS = [
     name: 'Kaiserschmarrn',
     description: 'Karamellisiert, Zwetschgenröster, Apfelmus',
     price: '12,90 €',
-    image: './img/menu/kaiserschmarrn.webp',
+    image: '/img/menu/kaiserschmarrn.webp',
     category: 'Dessert'
   }
 ];
 
 export const GALLERY_IMAGES = [
-  './img/gallery/content-lokal-neu1.webp',
-  './img/gallery/content-lokal-neu2.webp',
-  './img/gallery/content-lokal-neu3.webp',
-  './img/gallery/content-lokal-neu4.webp',
-  './img/gallery/content-lokal-neu5.webp',
-  './img/gallery/content-lokal-neu6.webp',
-  './img/gallery/content-lokal-neu7.webp',
-  './img/gallery/content-lokal-neu8.webp',
-  './img/gallery/content-lokal-neu9.webp',
-  './img/gallery/content-lokal-neu10.webp',
-  './img/gallery/content-lokal-neu11.webp',
-  './img/gallery/content-lokal-neu12.webp',
-  './img/gallery/content-lokal-neu13.webp',
-  './img/gallery/content-lokal-neu14.webp',
-  './img/gallery/content-lokal-neu15.webp',
+  '/img/gallery/content-lokal-neu1.webp',
+  '/img/gallery/content-lokal-neu2.webp',
+  '/img/gallery/content-lokal-neu3.webp',
+  '/img/gallery/content-lokal-neu4.webp',
+  '/img/gallery/content-lokal-neu5.webp',
+  '/img/gallery/content-lokal-neu6.webp',
+  '/img/gallery/content-lokal-neu7.webp',
+  '/img/gallery/content-lokal-neu8.webp',
+  '/img/gallery/content-lokal-neu9.webp',
+  '/img/gallery/content-lokal-neu10.webp',
+  '/img/gallery/content-lokal-neu11.webp',
+  '/img/gallery/content-lokal-neu12.webp',
+  '/img/gallery/content-lokal-neu13.webp',
+  '/img/gallery/content-lokal-neu14.webp',
+  '/img/gallery/content-lokal-neu15.webp',
 ];
 
 export const ABOUT_FEATURES = [

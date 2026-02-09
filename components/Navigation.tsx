@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '../constants';
 import { Menu, X } from 'lucide-react';
-import Logo from '../img/logo_1.svg?react';
+import Logo from '../assets/logo_1.svg?react';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);

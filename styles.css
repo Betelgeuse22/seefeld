@@ -147,10 +147,19 @@ button {
     width: 35px;
   }
 
+   
+
   .brand-text {
     font-size: 1.2rem;
   }
 }
+
+ @media (min-width: 768px) {
+   .nav-brand {
+     padding-right: 15px;
+     ;
+   }
+  }
 
 .navbar.scrolled .nav-brand {
   color: var(--c-dark);
@@ -180,6 +189,7 @@ button {
   color: #e5e7eb;
   transition: color 0.2s;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .navbar.scrolled .nav-link {
@@ -224,6 +234,7 @@ button {
   }
 }
 
+
 .navbar.scrolled .mobile-toggle {
   color: var(--c-dark);
 }
@@ -246,6 +257,7 @@ button {
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-mobile-nav {
@@ -694,6 +706,64 @@ button {
   color: white;
 }
 
+
+.menu-pdf-dropdown-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 4rem auto 0;
+  /* Центрируем */
+  z-index: 50;
+}
+
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-dropdown-list {
+  position: absolute;
+  top: 110%;
+  /* Чуть ниже кнопки */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  overflow: hidden;
+}
+
+.menu-dropdown-item {
+  transition: background 0.2s;
+}
+
+.menu-dropdown-item:hover {
+  background-color: #f9f9f9;
+}
+
+.menu-dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.8rem 1.5rem;
+  color: var(--c-dark);
+  text-decoration: none;
+  font-family: var(--f-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.icon-red {
+  color: var(--c-red);
+}
+
+.menu-dropdown-link:hover {
+  color: var(--c-red);
+}
+
 /* Gallery */
 .gallery-section {
   background-color: var(--c-dark);
@@ -710,13 +780,120 @@ button {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 колонки */
+  grid-template-rows: repeat(2, 1fr);
+  /* 2 ряда = 6 фото */
+  gap: 15px;
+  width: 100%;
+  min-height: 500px;
+  /* Чтобы секция не схлопывалась */
 }
 
-@media (min-width: 768px) {
+.gallery-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 45px;
+  /* Увеличили отступ, чтобы кнопки не жали фото */
+}
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--c-red);
+  color: white;
+  border: none;
+  width: 40px;
+  /* Было 50px */
+  height: 40px;
+  /* Было 50px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider-nav.prev {
+  left: -5px;
+}
+
+.slider-nav.next {
+  right: -5px;
+}
+
+.slider-nav:hover:not(.disabled) {
+  background: var(--c-dark);
+  scale: 1.1;
+}
+
+.slider-nav.disabled {
+  background: var(--c-gray-300);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--c-gray-100);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dot.active {
+  background: var(--c-red);
+  border-color: var(--c-red);
+  width: 20px;
+  border-radius: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .gallery-slider-wrapper {
+    padding: 0 10px;
+    /* Меньше падинг на мобилках */
+  }
+
+  /* Показываем кнопки, но делаем их компактнее и полупрозрачными */
+  .slider-nav {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    background: rgba(166, 25, 46, 0.8);
+    /* var(--c-red) с прозрачностью */
+    backdrop-filter: blur(4px);
+  }
+
+  .slider-nav.prev {
+    left: 5px;
+  }
+
+  .slider-nav.next {
+    right: 5px;
+  }
+
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 колонки на мобилках */
+    grid-template-rows: repeat(3, 1fr);
+    /* 3 ряда для 6 фото */
+    min-height: 400px;
   }
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { CONTACT_INFO, OPENING_HOURS } from '../constants';
 import { MapPin, Phone, Instagram, Facebook } from 'lucide-react';
+import { SiInstagram, SiFacebook, SiTripadvisor } from 'react-icons/si';
 
 const Footer: React.FC = () => {
   return (
@@ -19,8 +20,15 @@ const Footer: React.FC = () => {
               <p className="footer-text">{CONTACT_INFO.phone}</p>
             </div>
             <div className="footer-socials">
-              <a href="#" className="social-link"><Instagram /></a>
-              <a href="#" className="social-link"><Facebook /></a>
+              <a href="https://www.instagram.com/seefeld_frankfurt/" target="_blank" rel="noopener noreferrer">
+        <SiInstagram size={24} />
+      </a>
+      <a href="https://www.facebook.com/seefeld.frankfurt/" target="_blank" rel="noopener noreferrer">
+        <SiFacebook size={24} />
+      </a>
+      <a href="https://www.tripadvisor.ru/Restaurant_Review-g187337-d14783956-Reviews-Seefeld_Neue_Tiroler_Kuche-Frankfurt_Hesse.html" target="_blank" rel="noopener noreferrer">
+        <SiTripadvisor size={24} />
+      </a>
             </div>
           </div>
 

@@ -23,26 +23,26 @@ export const OPENING_HOURS = [
 export const PREVIEW_MENU_ITEMS = [
   {
     id: 1,
-    name: 'Tiroler Gröstl',
-    description: 'Röstkartoffeln, Rindfleisch, Spiegelei, Krautsalat',
-    price: '18,50 €',
-    image: 'https://picsum.photos/800/600?random=1',
+    name: 'Hirschroulade',
+    description: 'Schwarzwurzel, Kartoffelkrapfen, Bratenjus',
+    price: '28,50 €',
+    image: './img/menu/hirsch_roulade.webp',
     category: 'Hauptgang'
   },
   {
     id: 2,
-    name: 'Kaspressknödelsuppe',
-    description: 'Kräftige Rindersuppe, handgemachter Käseknödel, Schnittlauch',
-    price: '9,50 €',
-    image: 'https://picsum.photos/800/600?random=2',
-    category: 'Vorspeise'
+    name: 'Rehrücken',
+    description: 'Kartoffelkrapfen, Grüne Pfeffersauce, Gemüse',
+    price: '29,50 €',
+    image: './img/menu/rehe_rucken.webp',
+    category: 'Hauptgang'
   },
   {
     id: 3,
     name: 'Wiener Schnitzel',
     description: 'Vom Kalb, lauwarmem Kartoffel-Gurkensalat, Preiselbeeren',
     price: '26,90 €',
-    image: 'https://picsum.photos/800/600?random=3',
+    image: './img/menu/wiener_schnitzel.webp',
     category: 'Hauptgang'
   },
   {
@@ -50,18 +50,27 @@ export const PREVIEW_MENU_ITEMS = [
     name: 'Kaiserschmarrn',
     description: 'Karamellisiert, Zwetschgenröster, Apfelmus',
     price: '12,90 €',
-    image: 'https://picsum.photos/800/600?random=4',
+    image: './img/menu/kaiserschmarrn.webp',
     category: 'Dessert'
   }
 ];
 
 export const GALLERY_IMAGES = [
-  'https://picsum.photos/800/800?random=10',
-  'https://picsum.photos/800/800?random=11',
-  'https://picsum.photos/800/800?random=12',
-  'https://picsum.photos/800/800?random=13',
-  'https://picsum.photos/800/800?random=14',
-  'https://picsum.photos/800/800?random=15',
+  './img/gallery/content-lokal-neu1.webp',
+  './img/gallery/content-lokal-neu2.webp',
+  './img/gallery/content-lokal-neu3.webp',
+  './img/gallery/content-lokal-neu4.webp',
+  './img/gallery/content-lokal-neu5.webp',
+  './img/gallery/content-lokal-neu6.webp',
+  './img/gallery/content-lokal-neu7.webp',
+  './img/gallery/content-lokal-neu8.webp',
+  './img/gallery/content-lokal-neu9.webp',
+  './img/gallery/content-lokal-neu10.webp',
+  './img/gallery/content-lokal-neu11.webp',
+  './img/gallery/content-lokal-neu12.webp',
+  './img/gallery/content-lokal-neu13.webp',
+  './img/gallery/content-lokal-neu14.webp',
+  './img/gallery/content-lokal-neu15.webp',
 ];
 
 export const ABOUT_FEATURES = [

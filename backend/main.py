@@ -36,8 +36,8 @@ conf = ConnectionConfig(
     MAIL_PORT=int(os.getenv("MAIL_PORT", 587)),
     MAIL_SERVER=os.getenv("MAIL_SERVER"),
     MAIL_FROM_NAME="Seefeld Reservations",
-    MAIL_STARTTLS=True,
-    MAIL_SSL_TLS=False,
+    MAIL_STARTTLS=False,
+    MAIL_SSL_TLS=True,
     USE_CREDENTIALS=True,
     VALIDATE_CERTS=True
 )
@@ -126,3 +126,8 @@ async def create_reservation(reservation: Reservation, background_tasks: Backgro
 @app.get("/")
 def read_root():
     return {"message": "Willkommen bei Seefeld API"}
+
+
+@app.get("/ping")
+async def ping():
+    return {"status": "awake"}

@@ -22,3 +22,13 @@ export const createReservation = async (data: ReservationData): Promise<any> => 
     throw error;
   }
 };
+
+
+export const pingServer = async() => {
+  try {
+    await fetch('${API_URL}/ping');
+    console.log('Server wake-up call sent');
+  } catch (error) {
+    console.error('Wake-up call failed', error);
+  }
+};

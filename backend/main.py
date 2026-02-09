@@ -1,11 +1,12 @@
 import os
+import resend
 from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 from supabase import create_client, Client
 from dotenv import load_dotenv
 from typing import Optional
-from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
+
 
 # Загрузка переменных окружения
 load_dotenv()
@@ -28,19 +29,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Настройка почты (данные берутся из .env)
-conf = ConnectionConfig(
-    MAIL_USERNAME=os.getenv("MAIL_USERNAME"),
-    MAIL_PASSWORD=os.getenv("MAIL_PASSWORD"),
-    MAIL_FROM=os.getenv("MAIL_FROM"),
-    MAIL_PORT=int(os.getenv("MAIL_PORT", 587)),
-    MAIL_SERVER=os.getenv("MAIL_SERVER"),
-    MAIL_FROM_NAME="Seefeld Reservations",
-    MAIL_STARTTLS=False,
-    MAIL_SSL_TLS=True,
-    USE_CREDENTIALS=True,
-    VALIDATE_CERTS=True
-)
 
 # Подключение к Supabase
 url: str = os.getenv("SUPABASE_URL", "")
@@ -87,16 +75,19 @@ def create_email_html(data: dict):
 
 
 async def send_notification_email(reservation_data: dict):
-    html = create_email_html(reservation_data)
-    message = MessageSchema(
-        subject=f"Новая бронь: {reservation_data['name']} ({reservation_data['date']})",
-        # Кому придет письмо (ваш адрес)
-        recipients=[os.getenv("ADMIN_EMAIL")],
-        body=html,
-        subtype=MessageType.html
-    )
-    fm = FastMail(conf)
-    await fm.send_message(message)
+    resend.api_key = os.getenv("RESEND_API_KEY")
+
+    html_content = create_email_html(reservation_data)
+
+    try:
+        resend.Emails.send({
+            "from": "Seefeld <onboarding@resend.dev>",
+            "to": os.getenv("ADMIN_EMAIL"),
+            "subject": f"Neue Reservierung : {reservation_data['name']}",
+            "html": html_content,
+        })
+    except Exception as e:
+        print(f"Email failed: {e}")
 
 
 @app.post("/reservations")
